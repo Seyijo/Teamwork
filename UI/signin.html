@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Login page</title>
+        <link rel="stylesheet" href="./styling.css"/>
+    </head>
+    <body>
+        <header id="header"><img src="./logo.svg" /> <h1>TeamWork</h1></header>
+
+        <div id="login">
+            <button id="btn1"> Log in</button>
+            <p>New to TeamWork ? &nbsp; &dArr;</p>
+            <button id="btn2">Sign in</button>
+
+        </div>
+        <script type="text/javascript">
+                document.getElementById("btn1").addEventListener("click",()=>{
+                document.querySelector('#login').innerHTML=`<div>
+                <p data-p><span>Enter UserName</span> <input type='text' id='in1' size='25'/></p>
+                <p data-p><span>Enter Password </span><input type='text' id'in1' size='25'/></p>
+                <p><input type="button" value="submit"/></p>
+                </div>`;
+                });
+                document.getElementById("btn2").addEventListener("click",()=>{
+                document.querySelector('#login').innerHTML=`<div>
+                <p><span>Enter First Name </span><input type='text' id='in1' size='25'/></p>
+                <p><span>Enter Surname  </span><input type='text' id='in1' size='25'/></p>
+                <p><span>Enter Email </span> <input type='email' id='in1' size='25'/></p>
+                <p><span>Enter Password </span><input type='password' id'in1' size='25'/></p>
+                <p><span>Confirm Password</span> <input type='password' id='in1' size='25'/></p>
+                <p><input type="button" value="submit"/></p>
+                </div>`;
+                });
+        </script>
+
+    </body>
+</html>
