@@ -13,14 +13,17 @@
         <div id="login">
             <button id="btn1"> Log in</button>
             <p>New to TeamWork ? &nbsp; &dArr;</p>
-            <button id="btn2">Sign in</button>
+            <button id="btn2">Sign up</button>
 
         </div>
+        <footer>
+            <h3> Teamwork copyright &copy; 2019</h3>
+        </footer>
         <script type="text/javascript">
                 document.getElementById("btn1").addEventListener("click",()=>{
                 document.querySelector('#login').innerHTML=`<div>
-                <p data-p><span>Enter UserName</span> <input type='text' id='in1' size='25'/></p>
-                <p data-p><span>Enter Password </span><input type='text' id'in1' size='25'/></p>
+                <p data-p><span>Enter UserName</span> <input type='text' id='in1' size='25' placeholder="Username|name"/></p>
+                <p data-p><span>Enter Password </span><input type='text' id'in2' size='25' placeholder="password|1234"/></p>
                 <p><input type="button" value="submit"/></p>
                 </div>`;
                 });
