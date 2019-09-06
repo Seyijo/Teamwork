@@ -2,41 +2,45 @@
 body{
     background-color: azure;
     margin:0px;
+    width:100vw;
+    height:100vh ;
 }
 #header{
-    border: 2px double black;
     background-color:lightseagreen;
-    text-align: center;
+    color: #ffffff;
     font-size: 25px;
-    line-height: normal;
     vertical-align:center;
-    margin:10px;
-    width:99vw;
-    height:100px;
+    width:100vw;
+    height:20vh;
     font-family:  'Great Vibes', cursive;
     font-weight: bold;
 }
+#header h1{
+    text-align: center;
+    margin:auto;
+    vertical-align: middle;
+    padding:10px 0px 0px 0px;
+}
 #header img{
     float:left;
-    margin:0;
     width: 15%;
     height:100%;
 }
 #login{
-    position: absolute;
-    top:30%;
-    left:10%;
+
     width: 70%;
-    margin: auto;
+    padding:10px;
+    margin: 10% 5% 8% 10%;
 }
 #login button{
     border-radius: 30%;
     width:60%;
-    margin:10px; 
+    margin:auto; 
     position: relative;
     left:20%;
-    font-size: 1.5em;background-color: aquamarine;
-    box-shadow: 5px 5px#121212;
+    font-size: 1.5em;
+    background-color: aquamarine;
+    box-shadow: 5px 5px#454545;
 }
 #login p{
     text-align:center;
@@ -49,4 +53,13 @@ body{
     margin-right: 10px;
     display: inline-block;
     width:30%;
+}
+footer{
+    width: 100vw;
+    height:10vh;
+    bottom:5%;
+    text-align: center;
+    background-color:lightseagreen;
+    color: #ffffff;
+    margin-top: 10px;
 }
