@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes&display=swap');
+body{
+    background-color: azure;
+    margin:0px;
+}
+#header{
+    border: 2px double black;
+    background-color:lightseagreen;
+    text-align: center;
+    font-size: 25px;
+    line-height: normal;
+    vertical-align:center;
+    margin:10px;
+    width:99vw;
+    height:100px;
+    font-family:  'Great Vibes', cursive;
+    font-weight: bold;
+}
+#header img{
+    float:left;
+    margin:0;
+    width: 15%;
+    height:100%;
+}
+#login{
+    position: absolute;
+    top:30%;
+    left:10%;
+    width: 70%;
+    margin: auto;
+}
+#login button{
+    border-radius: 30%;
+    width:60%;
+    margin:10px; 
+    position: relative;
+    left:20%;
+    font-size: 1.5em;background-color: aquamarine;
+    box-shadow: 5px 5px#121212;
+}
+#login p{
+    text-align:center;
+    color: #121212;
+}
+
+    
+#login span{
+    text-align:right;
+    margin-right: 10px;
+    display: inline-block;
+    width:30%;
+}
