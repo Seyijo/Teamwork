@@ -4,21 +4,23 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Login page</title>
+        <title>Home page</title>
         <link rel="stylesheet" href="./styling.css"/>
     </head>
     <body>
         <header id="header"><img src="./logo.svg" /> <h1>TeamWork</h1></header>
+        <article id="acl" >
+            <h3> Why Team Work?</h3>
+            <p> Team work helps employees bond and let of steam during the course of the day. Teamwork is a<br/> place employes can share
+                stories, and it can also be used as a work enhancing tool. <br/><span> Sign up to Teamwork today</span>
+            </p>
+        </article>
 
         <div id="login">
             <button id="btn1"> Log in</button>
             <p>New to TeamWork ? &nbsp; &dArr;</p>
             <button id="btn2">Sign up</button>
-                     <div id='div1' >
-                        <p data-p><span>Enter UserName</span> <input type='text' id='in1' size='25' placeholder="Username|name"/></p>
-                        <p data-p><span>Enter Password </span><input type='password' id'in2' size='25' placeholder="password|1234"/></p>
-                        <p><input type="button" value="submit" id="subBtn1"/> <input type="button" value="return" id="retBtn1"/></p>
-                    </div>
+                     
                     
         </div>
         <footer>
@@ -26,12 +28,8 @@
         </footer>
         <script type="text/javascript">
 
-                document.getElementById("btn1").addEventListener("click",()=>{
-                
-                });
-                document.getElementById("btn2").addEventListener("click",()=>{
-                    
-                });
+                document.getElementById("btn1").addEventListener("click",()=>location.replace("./login.html"));
+                document.getElementById("btn2").addEventListener("click",()=>location.replace("./signup.html"));
                 
         </script>
 
