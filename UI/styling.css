@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes&display=swap');
+body{
+    background-color: azure;
+    margin:0px;
+    width:100vw;
+    height:100vh ;
+}
+#header{
+    background-color:lightseagreen;
+    color: #ffffff;
+    font-size: 25px;
+    vertical-align:center;
+    width:100vw;
+    height:20vh;
+    font-family:  'Great Vibes', cursive;
+    font-weight: bold;
+}
+#header h1{
+    text-align: center;
+    margin:auto;
+    vertical-align: middle;
+    padding:10px 0px 0px 0px;
+}
+#header img{
+    float:left;
+    width: 15%;
+    height:100%;
+}
+#acl{
+    margin:auto;
+    padding: 5px;
+    font-size: 1.5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+    color:aqua;
+    background:url(./teampic.jpg) no-repeat ;
+    background-size: 100% 100%;
+}
+#acl h3{
+    text-align: center;
+    margin: auto;
+}
+#acl span{
+    position: relative;
+    left: 30%;
+    font-weight: bold;
+    color:aqua;
+}
+#login{
+
+    width: 70%;
+    padding:10px;
+    margin: 5% 5% 8% 10%;
+}
+#login button{
+    border-radius: 30%;
+    width:60%;
+    margin:auto; 
+    position: relative;
+    left:20%;
+    font-size: 1.5em;
+    background-color: aquamarine;
+    box-shadow: 5px 5px#454545;
+}
+#login p{
+    text-align:center;
+    color: #121212;
+}
+    #div1,#div2{
+    margin:5%;
+    text-align:center;
+    padding:10px 10px 10px 0px;
+    
+
+}
+#div1 ,#div2 p{
+    width:70%;
+    margin:10px 15px 10px 15px;
+}
+
+
+   
+#div1 span, #div2 span{
+    text-align:right;
+    margin-right: 10px;
+    display: inline-block;
+    width:30%;
+}
+nav ul li{
+    display:inline-block;
+
+}
+nav a{
+    text-decoration:none;
+    color:black;
+}
+footer{
+    position:relative;
+    width: 100vw;
+    height:10vh;
+    bottom:5%;
+    text-align: center;
+    background-color:lightseagreen;
+    color: #ffffff;
+    margin-top: 10px;
+}
