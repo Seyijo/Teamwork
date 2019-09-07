@@ -46,9 +46,21 @@ body{
     text-align:center;
     color: #121212;
 }
-
+    #div1,#div2{
+    margin:5%;
+    text-align:center;
+    padding:10px 10px 10px 0px;
     
-#login span{
+
+}
+#div1 ,#div2 p{
+    width:70%;
+    margin:10px 15px 10px 15px;
+}
+
+
+   
+#div1 span, #div2 span{
     text-align:right;
     margin-right: 10px;
     display: inline-block;

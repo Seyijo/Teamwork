@@ -14,29 +14,25 @@
             <button id="btn1"> Log in</button>
             <p>New to TeamWork ? &nbsp; &dArr;</p>
             <button id="btn2">Sign up</button>
-
+                     <div id='div1' >
+                        <p data-p><span>Enter UserName</span> <input type='text' id='in1' size='25' placeholder="Username|name"/></p>
+                        <p data-p><span>Enter Password </span><input type='password' id'in2' size='25' placeholder="password|1234"/></p>
+                        <p><input type="button" value="submit" id="subBtn1"/> <input type="button" value="return" id="retBtn1"/></p>
+                    </div>
+                    
         </div>
         <footer>
             <h3> Teamwork copyright &copy; 2019</h3>
         </footer>
         <script type="text/javascript">
+
                 document.getElementById("btn1").addEventListener("click",()=>{
-                document.querySelector('#login').innerHTML=`<div>
-                <p data-p><span>Enter UserName</span> <input type='text' id='in1' size='25' placeholder="Username|name"/></p>
-                <p data-p><span>Enter Password </span><input type='text' id'in2' size='25' placeholder="password|1234"/></p>
-                <p><input type="button" value="submit"/></p>
-                </div>`;
+                
                 });
                 document.getElementById("btn2").addEventListener("click",()=>{
-                document.querySelector('#login').innerHTML=`<div>
-                <p><span>Enter First Name </span><input type='text' id='in1' size='25'/></p>
-                <p><span>Enter Surname  </span><input type='text' id='in1' size='25'/></p>
-                <p><span>Enter Email </span> <input type='email' id='in1' size='25'/></p>
-                <p><span>Enter Password </span><input type='password' id'in1' size='25'/></p>
-                <p><span>Confirm Password</span> <input type='password' id='in1' size='25'/></p>
-                <p><input type="button" value="submit"/></p>
-                </div>`;
+                    
                 });
+                
         </script>
 
     </body>
