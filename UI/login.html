@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <link rel="stylesheet" href="./styling.css"/>
+    <script src="./script.js"></script>
    
 </head>
 <body>
@@ -19,10 +20,31 @@
         <div id='div1' >
             <p data-p><span>Enter UserName</span> <input type='text' id='in1' size='25' placeholder="Username|name"/></p>
             <p data-p><span>Enter Password </span><input type='password' id'in2' size='25' placeholder="password|1234"/></p>
-            <p><input type="button" value="submit" id="subBtn1"/> </p>
+            <p><input type="button" value="submit" id="subBtn1"/> <input type="button"  value ="reset" id="reset"/></p>
         </div>
+        <p class="warning"> Your password or username is incorrect, please fill in the correct details or if you dont have an 
+            account please <a href="./signup.html">sign in here</a>.
+        </p>
         <footer>
                 <h3> Teamwork copyright &copy; 2019</h3>
             </footer>
+            <script>
+const inp1=document.querySelector("#in1");
+const inp2= document.querySelector("#in2");
+const btn1=document.querySelector("#subBtn1");
+const btn2=document.querySelector("#reset");
+
+btn1.addEventListener("click",()=>{
+let obj=objList.find(e=> e.getPassword===inp2.value&& e.getUserName===inp1.value);
+if(obj)location.replace("./userAccount.html");
+
+else{
+    document.querySelector(".warning").style.display="block";
+    
+}
+
+
+});
+            </script>
 </body>
 </html>
