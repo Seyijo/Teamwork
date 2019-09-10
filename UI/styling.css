@@ -80,17 +80,16 @@ body{
 }
 #div1 p ,#div2 p{
     width:70%;
-    margin:10px 15px 10px 15px;
+    margin:10px 15px ;
     text-align: center;
 }
+
 #subBtn1,#reset{
 margin:auto 20px;
 }
-
-   
-#div1 span, #div2 span{
+  #div1 span, #div2 span{
     text-align:right;
-    margin-right: 10px;
+    margin-right: 15px;
     display: inline-block;
     width:30%;
 }
@@ -124,7 +123,7 @@ footer{
     color: #ffffff;
     margin-top: 20px ;
 }
-@media only screen and (max-length:768px){
+@media only screen and (max-witdh:768px){
     #acl{
         margin:auto;
         padding: 5px;

@@ -17,26 +17,39 @@
                     <li>About Us</li>
                 </ul>
         </nav>
+        
         <div id="div2">
-            <p class="pin"><span>Enter First Name </span><input type='text' id='in3' size='25'/></p>
-            <p class="pin" ><span>Enter Surname  </span><input type='text' id='in4' size='25'/></p>
-            <p class="pin"><span>Enter Email </span> <input type='email' id='in5' size='25'/></p>
-            <p class="pin"><span>Create Username </span><input type='text' id='in6' size='25'/></p>
-            <p class="pin"><span>Enter Password </span><input type='password' id='in7' size='25'/></p>
-            <p class="pin"><span>Confirm Password</span> <input type='password' id='in8' size='25'/></p>
+            <p class="pin" ><span>Enter First Name </span><input type='text' id='in3' size='25' required /></p>
+            <p class="pin" ><span>Enter Surname  </span><input type='text' id='in4' size='25' required /></p>
+            <p class="pin"><span>Enter Email </span> <input type='email' id='in5' size='25' required /></p>
+            <p class="pin"><span>Create Username </span><input type='text' id='in6' size='25' required /></p>
+            <p class="pin"><span>Enter Password </span><input type='password' id='in7' size='25' required /></p>
+            <p class="pin"><span>Confirm Password</span> <input type='password' id='in8' size='25' required /></p>
             <p class="pin"><input type="button" value="submit" id="subBtn2"/></p>
+            <p class="warning" id="mes"> "You need to fill in all fields ,refresh to start again"</a>.
+            </p>
     </div>
         <footer>
                 <h3> Teamwork copyright &copy; 2019</h3>
             </footer>
-            <script\>
+            <script>
             const inp3= document.querySelector("#in3");
             const inp4= document.querySelector("#in4");
             const inp5= document.querySelector("#in5");
             const inp6= document.querySelector("#in6");
             const inp7= document.querySelector("#in7");
             const inp8= document.querySelector("#in8");
+            const pin =document.querySelectorAll("p.pin input");
             const subBtn=document.querySelector("#subBtn2");
+            const mesg= document.querySelector("#mes");
+
+            subBtn.addEventListener("click",()=>{
+
+    const obj=new User("name","userName","password")
+    obj.createPage();
+    console.log(obj.getUserName());
+
+            });
             </script>
 </body>
 </html>

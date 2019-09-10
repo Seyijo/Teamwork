@@ -21,5 +21,31 @@ postArticle(comment){
     let len=this.list.length-1;
     return this.list[len];
 }
-
+createPage(){
+let win=window.open("");
+win.document.write(`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styling.css"/>
+   
+</head>
+<body>
+        <header id="header"><img src="./logo.svg" /> <h1>TeamWork</h1></header>
+        <nav>
+            <ul>
+                <li><a href="./Home.html">Home</a></li>
+                <li>About Us</li>
+            </ul>
+        </nav>
+        <footer>
+                <h3> Teamwork copyright &copy; 2019</h3>
+            </footer>
+</body>
+</html>`);
+}
+ 
 }
