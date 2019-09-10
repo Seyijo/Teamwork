@@ -19,7 +19,7 @@
         </nav>
         <div id='div1' >
             <p data-p><span>Enter UserName</span> <input type='text' id='in1' size='25' placeholder="Username|name"/></p>
-            <p data-p><span>Enter Password </span><input type='password' id'in2' size='25' placeholder="password|1234"/></p>
+            <p data-p><span>Enter Password </span><input type='password' id='in2' size='25' placeholder="password|1234"/></p>
             <p><input type="button" value="submit" id="subBtn1"/> <input type="button"  value ="reset" id="reset"/></p>
         </div>
         <p class="warning"> Your password or username is incorrect, please fill in the correct details or if you dont have an 
@@ -36,15 +36,20 @@ const btn2=document.querySelector("#reset");
 
 btn1.addEventListener("click",()=>{
 let obj=objList.find(e=> e.getPassword===inp2.value&& e.getUserName===inp1.value);
-if(obj)location.replace("./userAccount.html");
+if(obj){
+location.assign("./userAccount.html");
 
-else{
-    document.querySelector(".warning").style.display="block";
-    
+
 }
+else document.querySelector(".warning").style.display="block";
 
 
-});
+    
+    });
+    btn2.addEventListener("click",()=>{
+inp1.value="";
+inp2.value="";
+    });
             </script>
 </body>
 </html>
