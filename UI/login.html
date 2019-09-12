@@ -13,8 +13,8 @@
         <header id="header"><img src="./logo.svg" /> <h1>TeamWork</h1></header>
         
         <div id='div1' >
-            <p data-p><span>Enter UserName</span> <input type='text' id='in1' size='25' placeholder="Username"/></p>
-            <p data-p><span>Enter Password </span><input type='password' id='in2' size='25' placeholder="password"/></p>
+            <p ><span>Enter UserName</span> <input type='text' id='in1' size='25' placeholder="Username"/></p>
+            <p ><span>Enter Password </span><input type='password' id='in2' size='25' placeholder="password"/></p>
             <p><input type="button" value="submit" id="subBtn1"/> <input type="button"  value ="reset" id="reset"/></p>
         </div>
         <p class="warning"> Your password or username is incorrect, please fill in the correct details or if you dont have an 
@@ -33,7 +33,6 @@ btn1.addEventListener("click",()=>{
     let storage=localStorage;
     let arr2 =[];
     for(let i in storage)arr2.push(storage.getItem(i));
-console.log(arr2);
 if(arr2.includes(inp1.value)&& arr2.includes(inp2.value) &&inp1.value !==""&&inp2.value !==""){
 new User().createPage();
 
