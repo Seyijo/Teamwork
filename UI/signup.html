@@ -11,12 +11,7 @@
 </head>
 <body>
         <header id="header"><img src="./logo.svg" /> <h1>TeamWork</h1></header>
-        <nav>
-            <ul>
-                    <li><a href="./Home.html">Home</a></li>
-                    <li>About Us</li>
-                </ul>
-        </nav>
+   
         
         <div id="div2">
             <p class="pin" ><span>Enter First Name </span><input type='text' id='in3' size='25' required /></p>
@@ -26,8 +21,7 @@
             <p class="pin"><span>Enter Password </span><input type='password' id='in7' size='25' required /></p>
             <p class="pin"><span>Confirm Password</span> <input type='password' id='in8' size='25' required /></p>
             <p class="pin"><input type="button" value="submit" id="subBtn2"/></p>
-            <p class="warning" id="mes"> "You need to fill in all fields ,refresh to start again"</a>.
-            </p>
+            <p class="warning" id="msg"> You need to fill in all fields, refresh to start again.</p>
     </div>
         <footer>
                 <h3> Teamwork copyright &copy; 2019</h3>
@@ -41,14 +35,40 @@
             const inp8= document.querySelector("#in8");
             const pin =document.querySelectorAll("p.pin input");
             const subBtn=document.querySelector("#subBtn2");
-            const mesg= document.querySelector("#mes");
+            const msg= document.querySelector("#msg");
+            
 
             subBtn.addEventListener("click",()=>{
+                let arr=[];
+                let storage=localStorage;
+                for(let i in storage)arr.push(storage.getItem(i));
 
-    const obj=new User("name","userName","password")
-    obj.createPage();
-    console.log(obj.getUserName());
+                let valid=true;
+                const pin=document.querySelectorAll("p.pin input")
+                for(let a of pin){
+                    if(a.value===""){
+                        valid=false;
+                        msg.style.display="block";
+                    }
+                }
+                if(arr.find(e=>e==inp6.value)){
+                    valid=false;
+                    msg.innerHTML="Choose another username, that one has already been taken. ";
+                    msg.style.display="block";
+                }
+                if(inp7.value !==inp8.value && inp7.value!==""){
+                    valid=false;
+                    msg.innerHTML="Your password doesn't match";
+                    msg.style.display="block";
+                }
+            if(valid){
+                Storage.setItem(inp6.value,inp6.value)
+                Storage.setItem(inp8.value,inp8.value)
+                location.assign("./login.html");
 
+            }
+
+    
             });
             </script>
 </body>

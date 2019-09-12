@@ -11,19 +11,14 @@
 </head>
 <body>
         <header id="header"><img src="./logo.svg" /> <h1>TeamWork</h1></header>
-        <nav>
-            <ul>
-                <li><a href="./Home.html">Home</a></li>
-                <li>About Us</li>
-            </ul>
-        </nav>
+        
         <div id='div1' >
-            <p data-p><span>Enter UserName</span> <input type='text' id='in1' size='25' placeholder="Username|name"/></p>
-            <p data-p><span>Enter Password </span><input type='password' id='in2' size='25' placeholder="password|1234"/></p>
+            <p data-p><span>Enter UserName</span> <input type='text' id='in1' size='25' placeholder="Username"/></p>
+            <p data-p><span>Enter Password </span><input type='password' id='in2' size='25' placeholder="password"/></p>
             <p><input type="button" value="submit" id="subBtn1"/> <input type="button"  value ="reset" id="reset"/></p>
         </div>
         <p class="warning"> Your password or username is incorrect, please fill in the correct details or if you dont have an 
-            account please <a href="./signup.html">sign in here</a>.
+            account please <a href="./signup.html">sign up here</a>.
         </p>
         <footer>
                 <h3> Teamwork copyright &copy; 2019</h3>
@@ -35,18 +30,17 @@ const btn1=document.querySelector("#subBtn1");
 const btn2=document.querySelector("#reset");
 
 btn1.addEventListener("click",()=>{
-let obj=objList.find(e=> e.getPassword===inp2.value&& e.getUserName===inp1.value);
-if(obj){
-const win=window.open("");
-win.document.write();
+    let storage=localStorage;
+    let arr2 =[];
+    for(let i in storage)arr2.push(storage.getItem(i));
+console.log(arr2);
+if(arr2.includes(inp1.value)&& arr2.includes(inp2.value) &&inp1.value !==""&&inp2.value !==""){
+new User().createPage();
 
 
 }
 else document.querySelector(".warning").style.display="block";
-
-
-    
-    });
+});
     btn2.addEventListener("click",()=>{
 inp1.value="";
 inp2.value="";
