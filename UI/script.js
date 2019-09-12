@@ -1,4 +1,4 @@
-const objList =[];
+
 
 class User{
 constructor(name,userName,password){
@@ -24,7 +24,7 @@ postArticle(comment){
 
 
 createPage(){
-let win=window.open("",this.getUserName+" Page");
+let win=window.open("");
 win.document.write(`<!DOCTYPE html>
 <html lang="en">
 <head>
