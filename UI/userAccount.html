@@ -13,8 +13,10 @@
         <nav><img id="avater" src="https://via.placeholder.com/75"
  alt="image not found"/>
             <ul>
-                <li><a href="./Home.html">Home</a></li>
-                <li>About Us</li>
+                <li>Home|</li>
+                <li>About Us|</li>
+                <li>Create Group|</li>
+                <li>Find Colleagues</li>
             </ul>
         </nav>
         <section id="view">
@@ -24,15 +26,18 @@
                 <button> Events</button>
                 <button> Friends</button>
                 <button> Topics</button>
+                
 
             </aside>
             <article id="mainview">
+                    
 
             </article>
             <div id="writer">
                     <textarea  id="writeart" cols="100" rows="10"></textarea><br/>
                     <button id="post">Post Article</button>
                 </div>
+            
         </section>
         <footer>
                 <h3> Teamwork copyright &copy; 2019</h3>
@@ -50,7 +55,6 @@ let el=document.createElement("div");
 el.classList.add("inner");
 el.innerHTML=text.value+"<br/>"+"<span>"+new Date().toLocaleString()+"</span>"
 articleItems.unshift(el);
-view.innerHTML="";
  articleItems.forEach(e=> view.appendChild(e));
 text.value="";
 panel.style.display="none";
