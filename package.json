@@ -1,0 +1,28 @@
+{
+  "name": "teamwork",
+  "version": "1.0.0",
+  "description": "Bonding app for employees",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seyijo/Teamwork.git"
+  },
+  "author": "Joseph Omitogun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Seyijo/Teamwork/issues"
+  },
+  "homepage": "https://github.com/Seyijo/Teamwork#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "express": "^4.17.1",
+    "mocha": "^6.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.4.0"
+  }
+}
