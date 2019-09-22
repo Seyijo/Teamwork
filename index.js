@@ -17,8 +17,8 @@ app.get("/api/v1/users/:userName",(req,res)=>{
     if(user) return res.send(user);
     return res.status(404).send("user not found");
 });
-app.get("/api/v1/users",(req,res)=>{
-    const course={
+app.post("/api/v1/users",(req,res)=>{
+    const user={
         
             firstName : req.body.firstName ,
             lastName : req.body.lastName,
@@ -30,7 +30,12 @@ app.get("/api/v1/users",(req,res)=>{
             department : req.body.department ,
             address : req.body.address
                 }
-    userList.push(course);
-    res.status(201).send(course);
+    let exists=userList.find(e=>e.userName===req.body.userName||(e.lastName===req.body.lastName&&e.firstName==req.body.firstName));
+    if(exists)return res.status(401).send("User already exists");
+    userList.push(user);
+    res.status(201).send({status:201 ,
+    message:"User created Successfully",
+    data:user
+});
 });
 app.listen(port,()=>console.log("sever running at "+port));
