@@ -20,6 +20,14 @@
             <p class="pin"><span>Create Username </span><input type='text' id='in6' size='25' required /></p>
             <p class="pin"><span>Enter Password </span><input type='password' id='in7' size='25' required /></p>
             <p class="pin"><span>Confirm Password</span> <input type='password' id='in8' size='25' required /></p>
+            <p class="pin"><span>Select Gender</span><select id="in9" required> 
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select></p>
+            <p class="pin"><span>Job Role </span><input type='text' id='in10' size='25' required /></p>
+            <p class="pin"><span>Department </span><input type='text' id='in11' size='25' required /></p>
+            <p class="pin"><span>Address </span><input type='text' id='in12' size='25' required /></p>
             <p class="pin"><input type="button" value="submit" id="subBtn2"/></p>
             <p class="warning" id="msg"> You need to fill in all fields, refresh to start again.</p>
     </div>
@@ -27,31 +35,41 @@
                 <h3> Teamwork copyright &copy; 2019</h3>
             </footer>
             <script>
+                
+            const arr=[]; 
             const inp3= document.querySelector("#in3");
             const inp4= document.querySelector("#in4");
             const inp5= document.querySelector("#in5");
             const inp6= document.querySelector("#in6");
             const inp7= document.querySelector("#in7");
             const inp8= document.querySelector("#in8");
+            const inp9= document.querySelector("#in9");
+            const inp10= document.querySelector("#in10");
+            const inp11= document.querySelector("#in11");
+            const inp12= document.querySelector("#in12");
             const pin =document.querySelectorAll("p.pin input");
             const subBtn=document.querySelector("#subBtn2");
             const msg= document.querySelector("#msg");
             
 
             subBtn.addEventListener("click",()=>{
-                let arr=[];
-                let storage=localStorage;
-                for(let i in storage)arr.push(storage.getItem(i));
 
+                fetch("https://arcane-savannah-06691.herokuapp.com/api/v1/users/").
+                then(res=>res.json()).
+                then(data=>{
+                    for(let a of data)arr.push(a);
+                }).catch(err=>console.log(err));
+                
                 let valid=true;
                 const pin=document.querySelectorAll("p.pin input")
                 for(let a of pin){
                     if(a.value===""){
                         valid=false;
                         msg.style.display="block";
+                        break;
                     }
                 }
-                if(arr.find(e=>e==inp6.value)){
+                if(arr.find(e=>e.userName===inp6.value)){
                     valid=false;
                     msg.innerHTML="Choose another username, that one has already been taken. ";
                     msg.style.display="block";
@@ -62,12 +80,31 @@
                     msg.style.display="block";
                 }
             if(valid){
-                location.assign("./userAccount.html");
-
-            }
+                const iuser= new User(inp3.value,inp4.value,inp5.value,inp6.value,inp8.value,inp9.value,inp10.value,inp11.value,inp12.value);
+                console.log(iuser)
+                fetch("https://arcane-savannah-06691.herokuapp.com/api/v1/users/",{
+                    method: 'POST', 
+                    body: {
+        
+                    "firstName":iuser.firstName,
+                    "lastName":iuser.lastName,
+                    "email":iuser.email,
+                    "userName":iuser.userName,
+                    "password":iuser.password,
+                     "gender":iuser.gender,
+                    "jobRole":iuser.jobRole,
+                    "department":iuser.department,
+                    "address":iuser.address},
+                    headers: new Headers()
+                }).then(res=>res.json()).
+                then(data=>console.log(data)).
+                catch(err=>console.log(err));
+                    }
 
     
             });
+            console.log(inp3.value);
+            
             </script>
 </body>
 </html>

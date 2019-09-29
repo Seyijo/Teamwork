@@ -28,22 +28,29 @@ const inp1=document.querySelector("#in1");
 const inp2= document.querySelector("#in2");
 const btn1=document.querySelector("#subBtn1");
 const btn2=document.querySelector("#reset");
-
+const url="https://arcane-savannah-06691.herokuapp.com/api/v1/users/";
+const userList =[];
 btn1.addEventListener("click",()=>{
-    let storage=localStorage;
-    let arr2 =[];
-    for(let i in storage)arr2.push(storage.getItem(i));
-if(arr2.includes(inp1.value)&& arr2.includes(inp2.value) &&inp1.value !==""&&inp2.value !==""){
-new User().createPage();
+    fetch(url).
+    then(resp=>resp.json()).
+    then(data=>{
+    
+        for(a of data)userList.push(a);
+    }).catch(err=>console.log(err));
 
+    const play= async ()=>{
+let user= await userList.find(e=>e.userName===inp1.value && e.password===inp2.value);
 
-}
+ if (user) location.assign("./userAccount.html");
 else document.querySelector(".warning").style.display="block";
+};
+play();
+
 });
+
     btn2.addEventListener("click",()=>{
 inp1.value="";
-inp2.value="";
-    });
-            </script>
+inp2.value="";});
+        </script>
 </body>
 </html>
