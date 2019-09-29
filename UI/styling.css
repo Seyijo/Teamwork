@@ -145,6 +145,11 @@ margin:auto 20px;
     display: inline-block;
     width:30%;
 }
+#div2 select,#div2 input{
+    width: 30%;
+    margin-left:10px;
+
+}
 input:invalid{
     color:red;
     border-bottom:1px solid red;
@@ -219,6 +224,11 @@ footer{
         width:90vw;
         text-align:center;
        
+        }
+        #div2 select{
+            display:inline-block;
+            width:90vw;
+            text-align:center;
         }
         #div1 p ,#div2 p{
             margin:0px;

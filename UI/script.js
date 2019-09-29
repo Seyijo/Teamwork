@@ -8,7 +8,7 @@ constructor(firstName,lastName,email,userName,password,gender,jobRole,department
     this.userName=userName;
     this.password=password;
     this.gender=gender;
-    this.jibRole=jobRole;
+    this.jobRole=jobRole;
     this.department=department;
     this.address=address;
 }
