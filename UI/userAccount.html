@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome to TeamWork</title>
     <link rel="stylesheet" href="./styling.css"/>
+    <script src="./script.js"></script>
    
 </head>
 <body>
@@ -34,6 +35,7 @@
 
             </article>
             <div id="writer">
+                <input type="text" id="title" placeholder="TITLE"/>
                     <textarea  id="writeart" cols="100" rows="10"></textarea><br/>
                     <button id="post">Post Article</button>
                 </div>
@@ -50,16 +52,24 @@ const wrart=document.querySelector("#createpost");
 const panel=document.querySelector("#writer");
 const text=document.querySelector("#writeart");
 const post =document.querySelector("#post");
-post.addEventListener("click",()=>{
+const title = document.querySelector("#title");
+post.addEventListener("click",  ()=>{
 let el=document.createElement("div");
 el.classList.add("inner");
-el.innerHTML=text.value+"<br/>"+"<span>"+new Date().toLocaleString()+"</span>"
+el.innerHTML=title.value !==""?title.value+"<br/>"+"<span>"+new Date().toLocaleString()+"</span>":"no title"+"<br/>"+"<span>"+new Date().toLocaleString()+"</span>"
+localStorage.setItem("top",el.innerHTML);
+localStorage.setItem("text",text.value);
 articleItems.unshift(el);
- articleItems.forEach(e=> view.appendChild(e));
+articleItems.forEach(e=> view.appendChild(e));
+title.value="";
 text.value="";
 panel.style.display="none";
+
+
 });
 wrart.addEventListener("click",()=>panel.style.display="block");
+console.log(localStorage.getItem("top"),localStorage.getItem("text"));
+
 
 </script>
 </html>

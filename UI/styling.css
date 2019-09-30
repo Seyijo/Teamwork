@@ -53,7 +53,11 @@ body{
     top:20vh;
     left:30vw;
     background-color:rgba(234,233,231,0.1);
+    width:80vw;
     display:none;
+}
+#writer>input,#writer>textarea{
+    width: 100%;
 }
 #mainview{
     width:70%;
@@ -135,7 +139,10 @@ div.inner span{
     margin:10px 15px ;
     text-align: center;
 }
-
+.pin input, #div1 input{
+    border-radius:15%;
+    box-shadow: 2px 2px 1px 1px#454545;
+}
 #subBtn1,#reset{
 margin:auto 20px;
 }
@@ -155,6 +162,19 @@ font-size: 1.5em;
 display: none;
 margin: 10px 10px 20px 10px;
 text-align: center;
+}
+#articleView{
+    width:calc(100%-20px);
+    height:70vh;
+    overflow: auto;
+    padding:3%;
+    font-size:1.5em;
+    text-align:center;
+    margin:10px;
+}
+#articleView span{
+    text-align: justify;
+    font-size: 1em;
 }
 nav{
     background-color:aqua;
