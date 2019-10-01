@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to TeamWork</title>
+    <link rel="stylesheet" href="./styling.css"/>
+    <script src="./script.js"></script>
+   
+</head>
+<body>
+        <header id="header"><img src="./logo.svg" /> <h1>TeamWork</h1></header>
+        <nav><img id="avater" src="https://via.placeholder.com/75"
+ alt="image not found"/>
+            <ul>
+                <li>Home|</li>
+                <li>About Us|</li>
+                <li>Create Group|</li>
+                <li>Find Colleagues</li>
+            </ul>
+        </nav>
+        <section id="view">
+            <aside id ="sideview">
+                <button id="createpost"> Write Article</button>
+                <button> Groups</button>
+                <button> Events</button>
+                <button> Friends</button>
+                <button> Topics</button>
+                
+
+            </aside>
+            <article id="mainview">
+                    
+
+            </article>
+            <div id="writer">
+                <input type="text" id="title" placeholder="TITLE"/>
+                    <textarea  id="writeart" cols="100" rows="10"></textarea><br/>
+                    <button id="post">Post Article</button>
+                </div>
+            
+        </section>
+        <footer>
+                <h3> Teamwork copyright &copy; 2019</h3>
+            </footer>
+</body>
+<script>
+const articleItems=[];
+const view=document.querySelector("#mainview");
+const wrart=document.querySelector("#createpost");
+const panel=document.querySelector("#writer");
+const text=document.querySelector("#writeart");
+const post =document.querySelector("#post");
+const title = document.querySelector("#title");
+post.addEventListener("click",  ()=>{
+let el=document.createElement("div");
+let bt=document.createElement("button");
+bt.classList.add("del");
+bt.innerHTML="delete"
+el.classList.add("inner");
+el.innerHTML=title.value !==""?title.value+"<br/>"+"<span>"+new Date().toLocaleString()+"</span>":"no title"+"<br/>"+"<span>"+new Date().toLocaleString()+"</span>"
+localStorage.setItem("top",el.innerHTML);
+localStorage.setItem("text",text.value);
+articleItems.unshift(el);
+articleItems.forEach(e=> {
+    view.append(bt);
+    view.appendChild(e)
+
+});
+title.value="";
+text.value="";
+panel.style.display="none";
+});
+wrart.addEventListener("click",()=>panel.style.display="block");
+window.onmousemove=()=>{
+const dBtn=document.querySelector(".del");
+if(del==null) return;
+dBtn.addEventListener("click",()=>{
+    let target= document. querySelector(".dBtn+div");
+    let exist=articleItems.find(e=>e==target);
+    let index=articleItems.indexOf(exists);
+    articleItems.splice(index,1);
+    
+});
+
+}
+
+</script>
+</html>
