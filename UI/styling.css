@@ -53,7 +53,7 @@ body{
     top:20vh;
     left:30vw;
     background-color:rgba(234,233,231,0.1);
-    width:80vw;
+    width:60vw;
     display:none;
 }
 #writer>input,#writer>textarea{
