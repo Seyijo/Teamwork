@@ -60,5 +60,6 @@ class User{
         if(obj==null) return;
     obj.addEventListener("click",()=>{
         location.assign("./articles.html");
+       
         });
 };

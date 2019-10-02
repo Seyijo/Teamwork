@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome to TeamWork</title>
-    <link rel="stylesheet" href="./styling.css"/>
-    <script src="./script.js"></script>
+    <link rel="stylesheet" href="../css/styling.css"/>
+    <script src="../js/script.js"></script>
    
 </head>
 <body>
-        <header id="header"><img src="./logo.svg" /> <h1>TeamWork</h1></header>
+        <header id="header"><img src="../img/logo.svg" /> <h1>TeamWork</h1></header>
         <nav><img id="avater" src="https://via.placeholder.com/75"
  alt="image not found"/>
             <ul>
@@ -55,21 +55,36 @@ const post =document.querySelector("#post");
 const title = document.querySelector("#title");
 post.addEventListener("click",  ()=>{
 let el=document.createElement("div");
+let bt=document.createElement("button");
+bt.classList.add("del");
+bt.innerHTML="delete"
 el.classList.add("inner");
 el.innerHTML=title.value !==""?title.value+"<br/>"+"<span>"+new Date().toLocaleString()+"</span>":"no title"+"<br/>"+"<span>"+new Date().toLocaleString()+"</span>"
 localStorage.setItem("top",el.innerHTML);
 localStorage.setItem("text",text.value);
 articleItems.unshift(el);
-articleItems.forEach(e=> view.appendChild(e));
+articleItems.forEach(e=> {
+    view.append(bt);
+    view.appendChild(e)
+
+});
 title.value="";
 text.value="";
 panel.style.display="none";
-
-
 });
 wrart.addEventListener("click",()=>panel.style.display="block");
-console.log(localStorage.getItem("top"),localStorage.getItem("text"));
+window.onmousemove=()=>{
+const dBtn=document.querySelector(".del");
+if(del==null) return;
+dBtn.addEventListener("click",()=>{
+    let target= document. querySelector(".dBtn+div");
+    let exist=articleItems.find(e=>e==target);
+    let index=articleItems.indexOf(exists);
+    articleItems.splice(index,1);
+    
+});
 
+}
 
 </script>
 </html>
